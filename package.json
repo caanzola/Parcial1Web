@@ -1,0 +1,22 @@
+{
+  "name": "parcial1web",
+  "version": "1.0.0",
+  "description": "### Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caanzola/Parcial1Web.git"
+  },
+  "author": "Camilo Anzola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caanzola/Parcial1Web/issues"
+  },
+  "homepage": "https://github.com/caanzola/Parcial1Web#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

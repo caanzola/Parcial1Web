@@ -30,3 +30,9 @@ Then the node-express server will be up and running. Once you are finish with th
 
 ## Authors
 * [__Camilo Anzola__](https://github.com/caanzola/)
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This repository has the standard MIT license. You can find it [here.](https://github.com/caanzola/Parcial1Web/blob/master/LICENSE)
+
