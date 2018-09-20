@@ -13,7 +13,7 @@ Once you have a package manager you can now download this repo on any folder you
 ## Data Base
 If you want to import a json file in a data base on mongo you have to go to the folder data (`cd data') and run the next command:
 
-`mongoimport --db dbName --collection dbName --type json --jsonArray --file fileName.json`
+`mongoimport --db dbName --collection dbName --type json --jsonArray --file fileName.json
 
 ## Deployment
 
