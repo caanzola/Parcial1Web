@@ -1,87 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.cosasBarra {
-  width: 43%;
-  margin: auto;
-  overflow:hidden;
-}
-.barra{
-  background: #333;
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-  float: center;
-}
-nav {
-  float: center;
-  text-align: center;
-}
-nav ul {
-  list-style: none;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-nav ul li {
-  float: left;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
-
-nav ul li a {
-  display: block;
-  padding: 20px;
-  color: #fff;
-  text-decoration: none;
-
-}
-nav ul li a:hover {
-  color: #FFFF86;
-  text-decoration: none;
-}
-nav ul li a:focus {
-  color: #FFFF86;
-  background: #000;
-  font-weight: bold;
-}
-nav ul li:hover {
-  background: #000;
-}
-a.nounderline:link { 
-text-decoration:none;
-} 
-
-a{
-  color:#fff;
-}
-
 .column {
     float: left;
     width: 50%;
@@ -93,3 +9,13 @@ a{
     display: table;
     clear: both;
 }
+
+.banner{
+  height: 160px;
+  color: #fff;
+  background-image: url("./img/Cables.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+

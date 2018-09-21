@@ -75,6 +75,9 @@ constructor(props){
 
 		return (
             <div>
+            <div class = "banner">
+            
+            </div>
               <div class="row">
                   <div class="column"> 
 
