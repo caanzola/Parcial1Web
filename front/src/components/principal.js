@@ -12,30 +12,18 @@ constructor(props){
          this.state = {
               value: '',
               file:'',
-              tipo:''
+              tipo:'',
+              json:{}
         }
 
-        this.onChange = this.onChange.bind(this)
-
-        this.onFormSubmit = this.onFormSubmit.bind(this)
 
         this.fileUpload = this.fileUpload.bind(this)
         this.jsonUpload = this.jsonUpload.bind(this)
         this.updateData = this.updateData.bind(this)
     }
 
-  onFormSubmit(e){
-
-  }
-  
-  onChange(e) {
-
-
-  }
-
   fileUpload(event){
-
-
+    console.log("Evento ",event)
     this.setState({ tipo:'csv'});
 
 // console.log("holaa")
@@ -58,6 +46,16 @@ constructor(props){
   jsonUpload(event){
 
     this.setState({tipo:'json'})
+    let inputText = document.getElementById("text1").value
+
+     try {
+      let data = JSON.parse(inputText);
+      this.setState({ json: data });
+    } catch (error) {
+      console.log(error);
+    }
+
+    console.log(this.state.json)
   }
 
 
@@ -76,7 +74,7 @@ constructor(props){
     }
     else if(this.state.tipo=='json')
     {
-      grafica = (<JsonGraphic/>)
+      grafica = (<JsonGraphic spec={this.state.json} />)
     }
 
 		return (
@@ -96,7 +94,7 @@ constructor(props){
                           <label>
                             <h1>Write your Json here:</h1>
                           </label>
-                          <textarea rows="20" cols="50"/>
+                          <textarea id = "text1" rows="20" cols="50"/>
                           <br/>
                           <button type="button" onClick={this.jsonUpload}> Submit </button>
                         </div>
@@ -106,8 +104,8 @@ constructor(props){
                   <div class="column"> 
 
                       <h1>Visualization:</h1>
+
                       {grafica}
-                    
 
                   </div>
               </div>
