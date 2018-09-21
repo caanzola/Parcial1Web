@@ -11,7 +11,7 @@ constructor(props){
         
          this.state = {
               value: '',
-              file:'',
+              csv:{},
               tipo:'',
               json:{}
         }
@@ -23,23 +23,18 @@ constructor(props){
     }
 
   fileUpload(event){
-    console.log("Evento ",event)
+
     this.setState({ tipo:'csv'});
 
-// console.log("holaa")
-//     this.setState({file:event.target.files[0]})
-//     console.log("file",this.state.file)
+    let file = event.target.files[0];
 
-//      var datosString='';
-//       let file = event.target.files[0];
-
-//       Papa.parse(file, {
-//           header: true,
-//           download: true,
-//           complete: (results) => {
-//               this.updateData(results.data);
-//             }
-//           });
+    Papa.parse(file, {
+      header: true,
+      download: true,
+      complete: (results) => {
+        this.updateData(results.data);
+      }
+    });
 
   }
 
@@ -60,8 +55,9 @@ constructor(props){
 
 
   updateData(result) {
-    var data = result;
-
+    var dataParsed = result
+    this.setState({ csv: dataParsed});
+    console.log(this.state.csv)
   }
 
 
@@ -70,7 +66,7 @@ constructor(props){
     let grafica = null;
     if(this.state.tipo=='csv')
     {
-      grafica = (<FileGraphic/>)
+      grafica = (<FileGraphic spec={this.state.csv}/>)
     }
     else if(this.state.tipo=='json')
     {
@@ -87,7 +83,7 @@ constructor(props){
                           <div class="custom-file">
 
                             <label class="custom-file-label" htmlFor="customFile"> <h1>Choose file (.csv): </h1> </label>
-                            <input type="file" class="custom-file-input" id="customFile" value={this.state.file} onClick={ this.fileUpload }/>
+                            <input id="fileUp" type="file" class="custom-file-input" accept=".csv"  value={this.state.file} onChange={ this.fileUpload }/>
                             <br/>
 
                           </div>
