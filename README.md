@@ -5,6 +5,9 @@
 ### Motivation
 This is a project for a [web development class](http://johnguerra.co/classes/webDevelopment_spring_2018/) in [Uniandes](https://www.uniandes.edu.co). The objective is to make a quick project using **MongoDB, Express, ReactJS and Node js**.
 
+### My app looks like:
+![](https://github.com/caanzola/DalgoProyect/blob/master/Captura%20de%20pantalla%202018-09-22%20a%20la(s)%207.52.00%20a.%20m..png?raw=true)
+
 ## Getting Started
 For this proyect to run you will need a couple of things first. First of all, a package manager. You can use [npm](https://www.npmjs.com/) for this project or [yarn](https://yarnpkg.com/en/docs/install).
 
