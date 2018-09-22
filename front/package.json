@@ -16,9 +16,7 @@
     "vega-lite": "^3.0.0-rc6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node ./bin/www",
+    "heroku-postbuild": "cd front && yarn install && yarn build"
   }
 }
