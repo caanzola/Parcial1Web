@@ -13,13 +13,15 @@ constructor(props){
               value: '',
               csv:{},
               tipo:'',
-              json:{}
+              json:{},
+              mensajeJson:""
         }
 
 
         this.fileUpload = this.fileUpload.bind(this)
         this.jsonUpload = this.jsonUpload.bind(this)
         this.updateData = this.updateData.bind(this)
+        this.saveVis = this.saveVis.bind(this)
     }
 
   fileUpload(event){
@@ -40,15 +42,19 @@ constructor(props){
 
   jsonUpload(event){
 
-    this.setState({tipo:'json'})
     let inputText = document.getElementById("text1").value
 
      try {
       let data = JSON.parse(inputText);
       this.setState({ json: data });
+
+    this.setState({tipo:'json', "mensajeJson":"Json submited succesfully!"})
     } catch (error) {
+      console.log("aca hay error");
+      this.setState({mensajeJson:"Something is wrong with the Json, please check and repair"})
       console.log(error);
     }
+
 
     console.log(this.state.json)
   }
@@ -60,23 +66,33 @@ constructor(props){
     console.log(this.state.csv)
   }
 
+  saveVis(event){
+    console.log("hola")
+    console.log(event)
+  }
+
 
 	render() {
 
     let grafica = null;
+    let mensaje = this.state.mensajeJson;
+    let boton = null;
+
     if(this.state.tipo=='csv')
     {
       grafica = (<FileGraphic spec={this.state.csv}/>)
+        boton = (<button type="button" onClick={this.saveVis}> Save Visualization </button>)
     }
     else if(this.state.tipo=='json')
     {
       grafica = (<JsonGraphic spec={this.state.json} />)
+      boton = (<button type="button" onClick={this.saveVis}> Save Visualization </button>)
     }
 
 		return (
             <div>
             <div class = "banner">
-            
+
             </div>
               <div class="row">
                   <div class="column"> 
@@ -105,6 +121,10 @@ constructor(props){
                       <h1>Visualization:</h1>
 
                       {grafica}
+                      <p></p>
+                      {mensaje}
+                      <p></p>
+                      {boton}
 
                   </div>
               </div>
